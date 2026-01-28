@@ -78,7 +78,13 @@ document.querySelectorAll('.cta-btn').forEach(button => {
 
 // Page load animation
 window.addEventListener('load', () => {
+    // mark hero loaded for entrance animations
     document.body.style.opacity = '1';
+    document.querySelectorAll('.product-card').forEach((c,i)=>{
+        setTimeout(()=>{ c.classList.add('visible') }, 120 + i*120)
+    })
+    const hero = document.querySelector('.hero')
+    if(hero) setTimeout(()=> hero.classList.add('loaded'), 120)
 });
 
 // Initial body opacity
