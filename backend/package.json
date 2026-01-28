@@ -1,0 +1,54 @@
+echo {
+  "name": "velora-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "stripe": "^11.0.0"
+  }
+} > package.jsonnpm installcd c:\Users\shame\OneDrive\Desktop\VeloraWebsite\frontendecho {
+  "name": "velora-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "axios": "^1.3.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+} > package.jsonimport React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);mkdir public
+cd public<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Velora</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>app.use("/api/orders", require("./routes/orders"));app.use("/api/orders", require("./routes/orders"));app.use("/api/orders", require("./routes/Order"));mongodcd c:\Users\shame\OneDrive\Desktop\VeloraWebsite\backend
+npm startcd c:\Users\shame\OneDrive\Desktop\VeloraWebsite\frontend
+npm start
