@@ -26,6 +26,8 @@
       </ul>
     </header>
 
+    <div class="stripe-bar" aria-hidden="true"></div>
+
     <section class="hero" id="home">
       <h1 class="foil">Velora</h1>
       <div class="ornament">✦</div>
@@ -35,7 +37,7 @@
 
     <main class="container">
       <section class="products" id="products">
-        <div class="product-card">
+        <div class="product-card" data-categories="men,tshirt">
           <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80" alt="T-shirt">
           <div class="meta">
               <h3>Classic T-shirt</h3>
@@ -47,8 +49,8 @@
               </div>
           </div>
         </div>
-        <div class="product-card">
-            <img src="images/hoodie-oversized-black.jpg" alt="Hoodie">
+        <div class="product-card" data-categories="women,hoodie">
+          <img src="images/hoodie-oversized-black.jpg" alt="Hoodie">
           <div class="meta">
               <h3>Signature Cashmere Hoodie</h3>
               <p>Sumptuously soft cashmere blend with a tailored silhouette, refined seams, and invisible finishes—an elevated essential for quiet luxury.</p>
@@ -59,8 +61,8 @@
               </div>
           </div>
         </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1519741498400-0e1b5b4f13e2?auto=format&fit=crop&w=1200&q=80" alt="Jacket">
+        <div class="product-card" data-categories="men,jacket">
+          <img src="https://images.unsplash.com/photo-1519741498400-0e1b5b4f13e2?auto=format&fit=crop&w=1200&q=80" alt="Jacket">
           <div class="meta">
               <h3>Heritage Traveler Jacket</h3>
               <p>Hand-finished tailoring in premium wool and leather trims, engineered for comfort and longevity—timeless protection crafted for city nights.</p>
@@ -69,6 +71,41 @@
                 <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80" alt="Jacket">
                 <div class="price-badge">$420</div>
               </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="collections" id="collections">
+        <h2>Collections</h2>
+        <div style="text-align:center;margin-bottom:12px">
+          <button id="clear-filter" class="btn-outline">Clear filter</button>
+        </div>
+        <div class="collections-grid">
+          <div class="collection-col">
+            <h3>Men</h3>
+            <ul>
+              <li><a href="#products" data-filter="men:all">All clothing</a></li>
+              <li><a href="#products" data-filter="men:hoodie">Hoodie &amp; sweatshirt</a></li>
+              <li><a href="#products" data-filter="men:tshirt">T shirt</a></li>
+              <li><a href="#products" data-filter="men:shirt">Shirt</a></li>
+              <li><a href="#products" data-filter="men:pants">Pants</a></li>
+              <li><a href="#products" data-filter="men:jeans">Jeans</a></li>
+              <li><a href="#products" data-filter="men:jacket">Jacket</a></li>
+              <li><a href="#products" data-filter="men:jogger">Jogger</a></li>
+            </ul>
+          </div>
+          <div class="collection-col">
+            <h3>Women</h3>
+            <ul>
+              <li><a href="#products" data-filter="women:all">All clothing</a></li>
+              <li><a href="#products" data-filter="women:hoodie">Hoodie &amp; sweatshirt</a></li>
+              <li><a href="#products" data-filter="women:tshirt">T shirt</a></li>
+              <li><a href="#products" data-filter="women:shirt">Shirt</a></li>
+              <li><a href="#products" data-filter="women:pants">Pants</a></li>
+              <li><a href="#products" data-filter="women:jeans">Jeans</a></li>
+              <li><a href="#products" data-filter="women:jacket">Jacket</a></li>
+              <li><a href="#products" data-filter="women:jogger">Jogger</a></li>
+            </ul>
           </div>
         </div>
       </section>

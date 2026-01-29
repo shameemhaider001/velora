@@ -89,3 +89,61 @@ window.addEventListener('load', () => {
 
 // Initial body opacity
 document.body.style.opacity = '0.95';
+
+// Collections filtering
+function normalizeCategories(str){
+    if(!str) return [];
+    return String(str).split(/[,\s]+/).map(s=>s.trim().toLowerCase()).filter(Boolean);
+}
+
+function applyFilter(filter){
+    const [gender, category] = (filter||'').split(':');
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card=>{
+        const cats = normalizeCategories(card.dataset.categories);
+        let show = false;
+        if(category === 'all'){
+            // show all that match gender
+            show = cats.includes(gender);
+        } else if(category){
+            show = cats.includes(gender) && cats.includes(category);
+        }
+        // if no gender specified (fallback), match by category only
+        if(!gender){ show = category ? cats.includes(category) : true }
+
+        if(show){
+            card.style.display = '';
+            setTimeout(()=> card.classList.add('visible'), 20);
+        } else {
+            card.style.display = 'none';
+            card.classList.remove('visible');
+        }
+    })
+}
+
+// attach listeners to collection links
+document.querySelectorAll('.collections a[data-filter]').forEach(link=>{
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const filter = this.dataset.filter;
+        // scroll to products
+        const target = document.querySelector('#products');
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        applyFilter(filter);
+    })
+});
+
+// expose for debugging
+window.applyFilter = applyFilter;
+
+// clear filter button
+const clearBtn = document.querySelector('#clear-filter');
+if(clearBtn){
+    clearBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        // show all products
+        applyFilter('');
+        const target = document.querySelector('#products');
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    })
+}
