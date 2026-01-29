@@ -19,8 +19,8 @@ export default function Shop(){
 
   const resolveImage = (img) => {
     if (!img) return "";
-    if (/^https?:\/\//i.test(img) || img.startsWith('/')) return img;
-    return `/images/${img}`;
+    if (/^https?:\/\//i.test(img) || img.startsWith('/')) return img.startsWith('/') ? img.slice(1) : img;
+    return `images/${img}`;
   }
 
   return (
